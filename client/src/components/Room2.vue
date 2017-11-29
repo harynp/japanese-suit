@@ -102,7 +102,7 @@ export default {
                   console.log("Player 2 Win");
               } else {
                 console.log("SERI CUK");
-              }
+              }   
           }
       }
       if (choice1 === "GUNTING") {
