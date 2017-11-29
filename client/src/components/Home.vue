@@ -12,6 +12,13 @@ export default {
       status: false
     }
   },
+  computed: {
+    getRoom: function () {
+      this.$db.ref(`${this.room}/player`).on('value', function(snapshot) {
+      console.log(snapshot.val())
+    })
+    },
+  },
   methods: {
     login: function(){
       fbLogin(response=>{
@@ -34,9 +41,6 @@ export default {
         })
       })
     },
-    getRoom: function () {
-
-    },
     addRoom: function () {
       let name = JSON.parse(localStorage.getItem('dataUser')).name
       this.$db.ref(`${this.room}/player`).push({
@@ -45,14 +49,15 @@ export default {
         status: this.status
       })
     },
-  beforeCreate: function(){
-    if(localStorage.getItem('fb_token')){
-      this.$router.push('/room')
+    beforeCreate: function(){
+      if(localStorage.getItem('fb_token')){
+        this.$router.push('/room')
+      }
+    },
+    created () {
+      this.getRoom()
     }
-  },
-  created () {
   }
-}
 }
 </script>
 

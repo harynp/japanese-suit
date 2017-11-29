@@ -17,7 +17,7 @@ function checkLoginState() {
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '148416162550087',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.11' // use graph api version 2.8
@@ -41,5 +41,5 @@ function fbLogin(cb){
     localStorage.setItem('fb_token', response.authResponse.accessToken)
     cb(response)
   }, {scope : 'public_profile, email, user_about_me'})
-  
+
 }
