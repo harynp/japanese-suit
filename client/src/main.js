@@ -3,8 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+<<<<<<< HEAD
 import store from './vuex/store'
 import firebase from 'firebase'
+=======
+import axios from 'axios'
+
+Vue.prototype.$http = axios.create()
+>>>>>>> 96d1285c5b608ab7bb1d340c480d63dfbdd915db
 
 Vue.config.productionTip = false
 

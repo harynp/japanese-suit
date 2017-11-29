@@ -10,7 +10,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^4.6.2",
+=======
+    "axios": "^0.17.1",
+    "fb": "^2.0.0",
+    "fs": "0.0.1-security",
+    "net": "^1.0.2",
+    "tls": "0.0.1",
+>>>>>>> 96d1285c5b608ab7bb1d340c480d63dfbdd915db
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.4",
