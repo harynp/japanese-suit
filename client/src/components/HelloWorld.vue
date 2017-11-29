@@ -11,6 +11,7 @@ export default {
   name: 'test',
   data () {
     return {
+      room: 'TES',
       name: 'HARY',
       score: 0,
       status: false
@@ -21,14 +22,17 @@ export default {
 
     },
     addRoom: function () {
-      this.$db.ref('/room').push({
-        player: this.name,
+      this.$db.ref(`${this.room}/player`).push({
+        name: this.name,
         score: this.score,
         status: this.status
       })
     },
+    updateRoom: function (room, player) {
+      todosRef.child(todo['.key']).child('text').set(newText)
+    },
     removeRoom: function (playerId) {
-      this.$db.ref('/room').child(playerId['.key']).remove()
+      this.$db.ref('/room').child(player['.key']).remove()
     }
   },
   created () {
