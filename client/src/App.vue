@@ -1,5 +1,5 @@
 <template>
-    <div id="app" :class="{'nav-open': $sidebar.showSidebar}">
+  <div :class="{'nav-open': $sidebar.showSidebar}">
     <router-view></router-view>
     <!--This sidebar appears only for screens smaller than 992px-->
     <side-bar type="navbar" :sidebar-links="$sidebar.sidebarLinks">
@@ -32,18 +32,7 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss"></style>
