@@ -1,6 +1,6 @@
 # japanese-suit
 
-> project-team hacktiv8
+> project-team hacktiv8 
 
 ## Build Setup
 
