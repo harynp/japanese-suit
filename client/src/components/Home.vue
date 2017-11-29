@@ -4,10 +4,18 @@
 
 <script>
 export default {
+  name: 'test',
+  data () {
+    return {
+      room: 'TES',
+      score: 0,
+      status: false
+    }
+  },
   methods: {
     login: function(){
       fbLogin(response=>{
-        let access_token = response.authResponse.accessToken        
+        let access_token = response.authResponse.accessToken
         this.$http.get('https://graph.facebook.com/me?fields=email,id,name,picture.width(800).height(800),cover&access_token='+access_token)
         .then(({data})=>{
           let obj = {
@@ -18,19 +26,33 @@ export default {
             cover: data.cover.source
           }
           localStorage.setItem('dataUser', JSON.stringify(obj))
+          this.addRoom()
           this.$router.push('/room')
         })
         .catch(err=>{
           console.log(err)
         })
       })
-    }
-  },
+    },
+    getRoom: function () {
+
+    },
+    addRoom: function () {
+      let name = JSON.parse(localStorage.getItem('dataUser')).name
+      this.$db.ref(`${this.room}/player`).push({
+        name: name,
+        score: this.score,
+        status: this.status
+      })
+    },
   beforeCreate: function(){
     if(localStorage.getItem('fb_token')){
       this.$router.push('/room')
     }
+  },
+  created () {
   }
+}
 }
 </script>
 

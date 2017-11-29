@@ -18,26 +18,16 @@ export default {
     }
   },
   methods: {
-    getRoom: function () {
-
-    },
     addRoom: function () {
       this.$db.ref(`${this.room}/player`).push({
         name: this.name,
         score: this.score,
         status: this.status
       })
-    },
-    updateRoom: function (room, player) {
-      todosRef.child(todo['.key']).child('text').set(newText)
-    },
-    removeRoom: function (playerId) {
-      this.$db.ref('/room').child(player['.key']).remove()
     }
   },
   created () {
     this.addRoom()
-    // this.removeRoom()
   }
 }
 </script>
