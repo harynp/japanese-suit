@@ -14,7 +14,10 @@ var config = {
   storageBucket: "japanese-suit.appspot.com",
   messagingSenderId: "1089227357697"
 };
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
+const db = firebaseApp.database()
+
+Vue.prototype.$db = db
 const state={
 
 }
