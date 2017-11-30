@@ -24,17 +24,64 @@
 </template>
 <script>
   export default {
-    name: 'player-one'
+    name: 'player-one',
+    data () {
+      return {
+        playerone: {
+          choose: ''
+        },
+        ilang: {
+          kertas: {
+            display: 'hidden'
+          },
+          gunting: {
+            display: 'hidden'
+          },
+          batu: {
+            display: 'hidden'
+          }
+        }
+      }
+    },
+    methods: {
+      rock () {
+        console.log('BATU')
+        this.playerone.choose = 'BATU'
+        this.ilang.kertas = {
+          display: 'none'
+        }
+        this.ilang.gunting = {
+          display: 'none'
+        }
+      },
+      paper () {
+        console.log('KERTAS')
+        this.playerone.choose = 'KERTAS'
+        this.ilang.batu = {
+          display: 'none'
+        }
+        this.ilang.gunting = {
+          display: 'none'
+        }
+      },
+      scissors () {
+        console.log('GUNTING')
+        this.playerone.choose = 'GUNTING'
+        this.ilang.kertas = {
+          display: 'none'
+        }
+        this.ilang.batu = {
+          display: 'none'
+        }
+      }
+    }
   }
 </script>
 <style scoped>
-  .logo-img{
-          border-radius: 40px;
+  img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
   }
-   img {
-            max-width: 100px;
-            display: block!important;
-            margin: 0 auto;
-            border-radius: 30px;
-        }
 </style>

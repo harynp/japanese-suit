@@ -24,18 +24,68 @@
 </template>
 <script>
   export default {
-    name: 'player-two'
+    name: 'player-two',
+    data () {
+      return {
+        playertwo: {
+          choose: ''
+        },
+        ilang2: {
+          kertas2: {
+            display: 'hidden'
+          },
+          gunting2: {
+            display: 'hidden'
+          },
+          batu2: {
+            display: 'hidden'
+          }
+        }
+      }
+    },
+    methods: {
+      rock2 () {
+        console.log('BATU')
+        this.playertwo.choose = 'BATU'
+        this.ilang2.batu2 = {
+          height: '300px!important'
+        }
+        this.ilang2.kertas2 = {
+          display: 'none'
+        }
+        this.ilang2.gunting2 = {
+          display: 'none'
+        }
+      },
+      paper2 () {
+        console.log('KERTAS')
+        this.playertwo.choose = 'KERTAS'
+        this.ilang2.batu2 = {
+          display: 'none'
+        }
+        this.ilang2.gunting2 = {
+          display: 'none'
+        }
+      },
+      scissors2 () {
+        console.log('GUNTING')
+        this.playertwo.choose = 'GUNTING'
+        this.ilang2.kertas2 = {
+          display: 'none'
+        }
+        this.ilang2.batu2 = {
+          display: 'none'
+        }
+      }
+    }
   }
 
 </script>
 <style scoped>
-  .logo-img{
-          border-radius: 40px;
+  img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
   }
-   img {
-            max-width: 100px;
-            display: block!important;
-            margin: 0 auto;
-            border-radius: 30px;
-        }
 </style>
