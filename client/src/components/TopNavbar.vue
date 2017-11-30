@@ -13,11 +13,9 @@
       <div class="navbar-right-menu">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#" class="btn-rotate">
+            <a @click='doLogout' href="#" class="btn-rotate">
               <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-              <p>
                 Logout
-              </p>
             </a>
           </li>
         </ul>
@@ -53,6 +51,12 @@
       },
       hideSidebar () {
         this.$sidebar.displaySidebar(false)
+      },
+      doLogout: function () {
+        console.log('-----logout')
+        localStorage.removeItem('dataUser')
+        localStorage.removeItem('fb_token')
+        this.$router.push('/')
       }
     }
   }

@@ -22,6 +22,7 @@ window.fbAsyncInit = function () {
     xfbml: true, // parse social plugins on this page
     version: 'v2.8' // use graph api version 2.8
   })
+  window.FB = FB
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response)
   })

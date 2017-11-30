@@ -19,13 +19,13 @@ import Chartist from 'chartist'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/sass/paper-dashboard.scss'
 import 'es6-promise/auto'
-Vue.prototype.$http = axios.create()
 // plugin setup
 Vue.use(VueRouter)
 Vue.use(GlobalComponents)
 Vue.use(vClickOutside)
 Vue.use(SideBar)
 
+Vue.prototype.$http = axios.create()
 // configure router
 const router = new VueRouter({
   mode: 'history',

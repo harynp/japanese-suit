@@ -29,9 +29,10 @@
         this.$router.push('/')
       }
     },
-    created: function () {
+    mounted: function () {
       if (!localStorage.getItem('fb_token') && !localStorage.getItem('dataUser')) {
-        alert('Please Login')
+        console.log('--------------')
+        // alert('Please Login')
         this.$router.push('/')
       } else {
         let dataUser = JSON.parse(localStorage.getItem('dataUser'))
