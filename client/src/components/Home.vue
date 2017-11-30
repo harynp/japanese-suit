@@ -21,9 +21,7 @@
                     </div>
                 </div>
         </div>
-    </div>
-    <button @click="login" type="button" name="button">Facebook Login</button>
-  
+    </div>  
   </div>
 </template>
 
