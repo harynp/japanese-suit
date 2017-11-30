@@ -10,7 +10,7 @@
         </div>
         <div class="footer">
         <div class="chart-legend">
-           PILIHAN         
+           <h3 class="title">{{ playerone.choose }}   </h3>      
         </div>
         <hr>
         <div class="stats">
@@ -78,10 +78,22 @@
   }
 </script>
 <style scoped>
-  img {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 30px;
-  }
+  @import url('https://fonts.googleapis.com/css?family=Macondo+Swash+Caps');
+.title {
+  font-family: 'Macondo Swash Caps', cursive;
+}
+img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  transition: 1s;
+}
+img:hover {
+  transform: scale(1.5) rotateZ(-6deg);
+  -moz-transform: scale(1.5) rotateZ(-5deg);
+  -webkit-transform: scale(1.5) rotateZ(-5deg);
+  -o-transform: scale(1.5) rotateZ(-5deg);
+  transition: 1s;
+}
 </style>

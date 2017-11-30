@@ -30,31 +30,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
-              <h2 class="title text-danger">404 Not Found</h2>
-              <h2 class="title">Oops! It seems that this page does not exist.</h2>
+              <h1 class="title text-danger">404 Not Found</h1>
+              <h2 class="title">Oops! Kenapa kesini? kan jadi 404.</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer-demo">
-      <div class="container">
-        <nav class="pull-left">
-          <ul>
-            <li>
-              <router-link :to="{path:'/'}">Home</router-link>
-            </li>
-            <li>
-              <router-link :to="{path:'/register'}">Register</router-link>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright pull-right">
-          &copy; 2017, made with
-          <i class="fa fa-heart heart"></i> by Paper admin
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 

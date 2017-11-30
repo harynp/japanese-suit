@@ -10,11 +10,11 @@
         </div>
         <div class="footer">
         <div class="chart-legend">
-           PILIHAN         
+           <h3 class="title">{{ playertwo.choose}} </h3>        
         </div>
         <hr>
         <div class="stats">
-          <slot name="footer">PLAYER 2 NAME</slot>
+          <slot name="footer">PLAYER</slot>
         </div>
         <div class="pull-right">
         </div>
@@ -48,7 +48,7 @@
         console.log('BATU')
         this.playertwo.choose = 'BATU'
         this.ilang2.batu2 = {
-          height: '300px!important'
+          width: '50%'
         }
         this.ilang2.kertas2 = {
           display: 'none'
@@ -82,10 +82,22 @@
 
 </script>
 <style scoped>
-  img {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 30px;
-  }
+@import url('https://fonts.googleapis.com/css?family=Macondo+Swash+Caps');
+.title {
+  font-family: 'Macondo Swash Caps', cursive;
+}
+img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  transition: 1s;
+}
+img:hover {
+  transform: scale(1.5) rotateZ(-6deg);
+  -moz-transform: scale(1.5) rotateZ(-5deg);
+  -webkit-transform: scale(1.5) rotateZ(-5deg);
+  -o-transform: scale(1.5) rotateZ(-5deg);
+  transition: 1s;
+}
 </style>

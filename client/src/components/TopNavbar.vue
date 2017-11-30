@@ -13,7 +13,7 @@
       <div class="navbar-right-menu">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a @click='doLogout' href="#" class="btn-rotate">
+            <a @click='doLogout' href='' class="btn-rotate">
               <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
                 Logout
             </a>

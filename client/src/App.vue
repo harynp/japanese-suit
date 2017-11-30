@@ -5,7 +5,7 @@
     <side-bar type="navbar" :sidebar-links="$sidebar.sidebarLinks">
       <ul class="nav navbar-nav">
         <li>
-          <a @click="doLogout">
+          <a @click="doLogout" href=''>
             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
             <p>Logout</p>
           </a>
@@ -25,6 +25,11 @@
         localStorage.removeItem('fb_token')
         this.$router.push('/')
       }
+    },
+    created () {
+      let parsing = JSON.parse(localStorage.getItem('dataUser'))
+      this.username = parsing.name
+      this.urlProfile = parsing.picture
     }
   }
 </script>
