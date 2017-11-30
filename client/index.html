@@ -20,5 +20,31 @@
 </div>
 
 </body>
-<script src="src/assets/js/fb.js" charset="utf-8"></script>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '148416162550087',
+    cookie     : true,  // enable cookies to allow the server to access the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.11' // use graph api version 2.8
+  });
+};
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+  
+  // (function init(d, s, id) {
+  //   var js, fjs = d.getElementsByTagName(s)[0]
+  //   if (d.getElementById(id)) return
+  //   js = d.createElement(s)
+  //   js.id = id
+  //   js.src = "https://connect.facebook.net/en_US/sdk.js"
+  //   fjs.parentNode.insertBefore(js, fjs)
+  // }(document, 'script', 'facebook-jssdk'))
+  
+</script>
 </html>

@@ -5,7 +5,7 @@
     <side-bar type="navbar" :sidebar-links="$sidebar.sidebarLinks">
       <ul class="nav navbar-nav">
         <li>
-          <a>
+          <a @click="doLogout">
             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
             <p>Logout</p>
           </a>
@@ -17,7 +17,16 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    methods: {
+      doLogout: function () {
+        console.log('-----logout')
+        localStorage.removeItem('dataUser')
+        localStorage.removeItem('fb_token')
+        this.$router.push('/')
+      }
+    }
+  }
 </script>
 
 <style>
