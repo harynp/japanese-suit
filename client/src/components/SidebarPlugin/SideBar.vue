@@ -7,11 +7,11 @@
     <!-- -->
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
-        <a href="#" class="simple-text">
+        <a href="" class="simple-text">
             <div class="logo-img">
-                <img src="static/img/vue-logo.png" alt="">
+                <img :src="urlProfile" alt="Photo Profile">
             </div>
-          Username
+          {{ username }}
         </a>
       </div>
       <slot>
@@ -90,7 +90,8 @@
       return {
         linkHeight: 60,
         activeLinkIndex: 0,
-
+        username: '',
+        urlProfile: '',
         windowWidth: 0,
         isWindows: false,
         hasAutoHeight: false
@@ -114,6 +115,11 @@
       $route: function (newRoute, oldRoute) {
         this.findActiveLink()
       }
+    },
+    created () {
+      let parsing = JSON.parse(localStorage.getItem('dataUser'))
+      this.username = parsing.name
+      this.urlProfile = parsing.picture
     }
   }
 

@@ -3,11 +3,8 @@ import VueRouter from 'vue-router'
 import vClickOutside from 'v-click-outside'
 
 // Plugins
-import GlobalComponents from './gloablComponents'
-// import Notifications from './components/UIComponents/NotificationPlugin'
 import SideBar from './components/SidebarPlugin'
 import App from './App'
-// import router from './router'
 import store from './vuex/store'
 import axios from 'axios'
 
@@ -21,7 +18,6 @@ import './assets/sass/paper-dashboard.scss'
 import 'es6-promise/auto'
 // plugin setup
 Vue.use(VueRouter)
-Vue.use(GlobalComponents)
 Vue.use(vClickOutside)
 Vue.use(SideBar)
 
