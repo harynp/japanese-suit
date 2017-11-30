@@ -1,23 +1,32 @@
-<template lang="html">
-  <button @click="login" type="button" name="button">Facebook Login</button>
+<template>
+  <div class="hello">
+    <!-- <h1>{{ msg }}</h1> -->
+    <navbar/>
+    <room :Player="player"/>
+    <h2>Essential Links</h2>
+    <h2>Ecosystem</h2>
+    <button @click="login" type="button" name="button">Facebook Login</button>
+
+  </div>
 </template>
 
 <script>
+import navbar from '@/components/Navbar'
+import room from '@/components/Room'
 export default {
-  name: 'test',
+  components:{
+    navbar,
+    room
+    },
   data () {
     return {
-      room: 'TES',
       score: 0,
-      status: false
+      status: false,
+      player: ''
     }
   },
   computed: {
-    getRoom: function () {
-      this.$db.ref(`${this.room}/player`).on('value', function(snapshot) {
-      console.log(snapshot.val())
-    })
-    },
+
   },
   methods: {
     login: function(){
@@ -41,13 +50,23 @@ export default {
         })
       })
     },
+    getRoom: function () {
+      this.$db.ref(`/JAPAN`).on('value', function(snapshot) {
+      console.log('INI SNAPSHOT',snapshot.val())
+      })
+    },
     addRoom: function () {
       let name = JSON.parse(localStorage.getItem('dataUser')).name
-      this.$db.ref(`${this.room}/player`).push({
+      this.$db.ref(`/JAPAN/`).push({
         name: name,
         score: this.score,
         status: this.status
       })
+      this.player = {
+        name: name,
+        score: this.score,
+        status: this.status
+      }
     },
     beforeCreate: function(){
       if(localStorage.getItem('fb_token')){
@@ -61,5 +80,20 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
 </style>
