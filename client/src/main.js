@@ -7,6 +7,9 @@ import GlobalComponents from './gloablComponents'
 // import Notifications from './components/UIComponents/NotificationPlugin'
 import SideBar from './components/SidebarPlugin'
 import App from './App'
+// import router from './router'
+import store from './vuex/store'
+import axios from 'axios'
 
 // router setup
 import routes from './routes/routes'
@@ -16,7 +19,7 @@ import Chartist from 'chartist'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/sass/paper-dashboard.scss'
 import 'es6-promise/auto'
-
+Vue.prototype.$http = axios.create()
 // plugin setup
 Vue.use(VueRouter)
 Vue.use(GlobalComponents)
@@ -42,6 +45,7 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
+  store,
   data: {
     Chartist: Chartist
   }

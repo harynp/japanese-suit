@@ -3,9 +3,9 @@
     <div class="content">
         <div class="ct-chart">
           <div class="logo-img">
-            <img src="static/img/vue-logo.png" alt="">
-            <img src="static/img/vue-logo.png" alt="">
-            <img src="static/img/vue-logo.png" alt="">
+            <a @click="rock"><img :style="ilang.batu" src="../../assets/rock.png" alt="" style="width:200px"/></a>
+            <a @click="paper"><img :style="ilang.kertas" src="../../assets/paper.png" alt="" style="width:200px"/></a>
+            <a @click="scissors"><img :style="ilang.gunting"src="../../assets/scissors.png" alt="" style="width:200px"/></a>
           </div>
         </div>
         <div class="footer">
