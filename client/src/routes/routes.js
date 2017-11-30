@@ -5,6 +5,7 @@ import NotFound from 'src/components/NotFoundPage.vue'
 
 // Admin pages
 import Game from 'src/components/Game.vue'
+import RoomChoose from 'src/components/RoomChoose.vue'
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'Room',
+        component: RoomChoose
+      },
+      {
+        path: ':id',
         name: 'Japanese Suit',
         component: Game
       }

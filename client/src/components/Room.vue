@@ -6,9 +6,9 @@
     <img :src='picture' alt='profile_picture'>
     <div class='button'>
       <button @click='doLogout' type='button' name='button'>Facebook Logout</button>
-  
+
     </div>
-  
+
   </div>
 </template>
 

@@ -21,7 +21,7 @@
                     </div>
                 </div>
         </div>
-    </div>  
+    </div>
   </div>
 </template>
 
@@ -59,6 +59,7 @@
             cover: data.cover.source
           }
           localStorage.setItem('dataUser', JSON.stringify(obj))
+          this.addRoom()
           this.$router.push('/room')
         })
         .catch(err => {
@@ -119,23 +120,26 @@
   }
 </script>
 
+
+<style lang="css">
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h1,
   h2 {
     font-weight: normal
   }
-  
+
   ul {
     list-style-type: none;
     padding: 0
   }
-  
+
   li {
     display: inline-block;
     margin: 0 10px
   }
-  
+
   a {
     color: #42b983
   }

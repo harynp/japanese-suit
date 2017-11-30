@@ -5,7 +5,9 @@ import vClickOutside from 'v-click-outside'
 // Plugins
 import SideBar from './components/SidebarPlugin'
 import App from './App'
+// import router from './router'
 import store from './vuex/store'
+import firebase from 'firebase'
 import axios from 'axios'
 
 // router setup
@@ -36,7 +38,15 @@ Object.defineProperty(Vue.prototype, '$Chartist', {
   }
 })
 
-/* eslint-disable no-new */
+var config = {
+  databaseURL: "https://japanese-suit-e30e0.firebaseio.com",
+  projectId: "japanese-suit-e30e0"
+}
+
+firebase.initializeApp(config);
+
+Vue.prototype.$db = firebase.database()
+
 new Vue({
   el: '#app',
   render: h => h(App),
