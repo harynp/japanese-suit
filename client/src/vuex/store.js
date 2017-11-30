@@ -7,7 +7,7 @@ Vue.use(VueFire)
 Vue.use(Vuex)
 
 const state = {
-  player: []
+  // player: []
 }
 const mutations = {
 
