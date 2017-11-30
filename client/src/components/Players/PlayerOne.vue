@@ -51,6 +51,9 @@
         let room = localStorage.getItem('room')
         console.log('BATU')
         this.playerone.choose = 'BATU'
+        this.$emit('play1', {
+          choose: 'BATU'
+        })
         this.ilang.kertas = {
           display: 'none'
         }
@@ -64,6 +67,9 @@
         let room = localStorage.getItem('room')
         console.log('KERTAS')
         this.playerone.choose = 'KERTAS'
+        this.$emit('play1', {
+          choose: 'KERTAS'
+        })
         this.ilang.batu = {
           display: 'none'
         }
@@ -77,6 +83,12 @@
         let room = localStorage.getItem('room')
         console.log('GUNTING')
         this.playerone.choose = 'GUNTING'
+        this.$emit('play1', {
+          choose: 'GUNTING'
+        })
+        this.$emit('play2', {
+          choose: 'BATU'
+        })
         this.ilang.kertas = {
           display: 'none'
         }

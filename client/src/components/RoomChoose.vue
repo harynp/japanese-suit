@@ -19,13 +19,15 @@ export default {
       let id = JSON.parse(localStorage.getItem('dataUser')).id
       let name = JSON.parse(localStorage.getItem('dataUser')).name
       let ruang = this.room
-      const room = localStorage.setItem('room', ruang)
-      this.$db.ref(`/JAPAN/room/` + id).set({
+      this.$db.ref(`/JAPAN/` + ruang + '/' + id).set({
         name: name,
         score: this.score,
         status: this.status
       })
       this.$router.push('/room/' + this.room)
+    },
+    created () {
+      this.checkRoom()
     }
   }
 }
