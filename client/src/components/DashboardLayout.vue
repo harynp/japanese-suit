@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper">
+    <side-bar type="sidebar" :sidebar-links="$sidebar.sidebarLinks">
+
+    </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
       <dashboard-content @click.native="toggleSidebar">

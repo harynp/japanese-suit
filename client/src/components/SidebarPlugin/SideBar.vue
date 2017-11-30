@@ -11,7 +11,7 @@
             <div class="logo-img">
                 <img src="static/img/vue-logo.png" alt="">
             </div>
-          Paper Dashboard
+          Username
         </a>
       </div>
       <slot>
@@ -28,14 +28,10 @@
           </a>
         </router-link>
       </ul>
-      <moving-arrow :move-y="arrowMovePx">
-
-      </moving-arrow>
     </div>
   </div>
 </template>
 <script>
-  import MovingArrow from './MovingArrow.vue'
   export default {
     props: {
       type: {
@@ -66,9 +62,6 @@
         type: Array,
         default: () => []
       }
-    },
-    components: {
-      MovingArrow
     },
     computed: {
       sidebarClasses () {

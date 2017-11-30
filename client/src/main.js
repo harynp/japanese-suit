@@ -4,8 +4,8 @@ import vClickOutside from 'v-click-outside'
 
 // Plugins
 import GlobalComponents from './gloablComponents'
-import Notifications from './components/UIComponents/NotificationPlugin'
-import SideBar from './components/UIComponents/SidebarPlugin'
+// import Notifications from './components/UIComponents/NotificationPlugin'
+import SideBar from './components/SidebarPlugin'
 import App from './App'
 
 // router setup
@@ -21,7 +21,6 @@ import 'es6-promise/auto'
 Vue.use(VueRouter)
 Vue.use(GlobalComponents)
 Vue.use(vClickOutside)
-Vue.use(Notifications)
 Vue.use(SideBar)
 
 // configure router
