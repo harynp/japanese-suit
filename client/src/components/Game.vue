@@ -4,13 +4,18 @@
     <div class='row'>
   
       <div class='col-md-6 col-xs-12'>
-        <player-one/>
+        <player-one @play1="getPlay1"/>
       </div>
   
       <div class='col-md-6 col-xs-12'>
-        <player-two/>
+        <player-two @play2="getPlay2"/>
       </div>
   
+    </div>
+    <div class='row'>
+      <button @click='timing'>TIMER</button>
+      <h3>{{ timer }}</h3>
+      <h1>{{ Winner }}</h1>
     </div>
   
   </div>
@@ -29,46 +34,97 @@
      */
     data () {
       return {
-        Winner: ''
+        Winner: '',
+        timer: 0,
+        play2: '',
+        play1: ''
       }
     },
     methods: {
+      getPlay1 (data) {
+        console.log(data)
+        this.play1 = data.choose
+      },
+      getPlay2 (data) {
+        console.log(data)
+        this.play2 = data.choose
+      },
+      timing () {
+        let timeleft = 5
+        let downloadTimer = setInterval(() => {
+          timeleft--
+          if (timeleft <= -1) {
+            clearInterval(downloadTimer)
+          }
+          this.checkTimeNow(timeleft)
+        }, 1000)
+      },
+      checkTimeNow (timer) {
+        console.log('----------check time', timer)
+        this.timer = timer + 1
+        if (timer <= -1) {
+          this.gameStarted()
+        }
+      },
       gameStarted () {
-        let choice1 = this.playerone.choose
-        let choice2 = this.playertwo.choose
-        if (choice1 === 'KERTAS') {
-          if (choice2 === 'BATU') {
-            console.log('Player 1 Win')
+        let choice1 = this.play1
+        let choice2 = this.play2
+        if (choice1 === '' && choice2 === '') {
+          this.Winner = 'SERI'
+        } else {
+          if (choice1 === '') {
+            this.Winner = 'Player 2 Win'
+          } else
+          if (choice2 === '') {
+            this.Winner = 'Player 1 Win'
           } else {
-            if (choice2 === 'GUNTING') {
-              console.log('Player 2 Win')
-            } else {
-              console.log('SERI CUK')
+            if (choice1 === 'KERTAS') {
+              if (choice2 === 'BATU') {
+                this.Winner = 'Player 1 Win'
+                console.log('Player 1 Win')
+              } else {
+                if (choice2 === 'GUNTING') {
+                  this.Winner = 'Player 2 Win'
+                  console.log('Player 2 Win')
+                } else if (choice2 === '') {
+                  this.Winner = 'Player 1 Win'
+                } else {
+                  this.Winner = 'SERI'
+                  console.log('SERI')
+                }
+              }
+            }
+            if (choice1 === 'GUNTING') {
+              if (choice2 === 'BATU') {
+                this.Winner = 'Player 2 Win'
+                console.log('Player 2 Win')
+              } else {
+                if (choice2 === 'KERTAS') {
+                  this.Winner = 'Player 1 Win'
+                  console.log('Player 1 Win')
+                } else {
+                  this.Winner = 'SERI'
+                  console.log('sama')
+                }
+              }
+            }
+            if (choice1 === 'BATU') {
+              if (choice2 === 'GUNTING') {
+                this.Winner = 'Player 1 Win'
+                console.log('Player 1 Win')
+              } else {
+                if (choice2 === 'KERTAS') {
+                  this.Winner = 'Player 2 Win'
+                  console.log('Player 2 Win')
+                } else {
+                  this.Winner = 'SERI'
+                  console.log('sama')
+                }
+              }
             }
           }
         }
-        if (choice1 === 'GUNTING') {
-          if (choice2 === 'BATU') {
-            console.log('Player 2 Win')
-          } else {
-            if (choice2 === 'KERTAS') {
-              console.log('Player 1 Win')
-            } else {
-              console.log('sama')
-            }
-          }
-        }
-        if (choice1 === 'BATU') {
-          if (choice2 === 'GUNTING') {
-            console.log('Player 1 Win')
-          } else {
-            if (choice2 === 'KERTAS') {
-              console.log('Player 2 Win')
-            } else {
-              console.log('sama')
-            }
-          }
-        }
+        this.$router.push('/')
       }
     }
   }

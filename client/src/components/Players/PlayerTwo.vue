@@ -47,6 +47,9 @@
       rock2 () {
         console.log('BATU')
         this.playertwo.choose = 'BATU'
+        this.$emit('play2', {
+          choose: 'BATU'
+        })
         this.ilang2.batu2 = {
           width: '50%'
         }
@@ -60,6 +63,9 @@
       paper2 () {
         console.log('KERTAS')
         this.playertwo.choose = 'KERTAS'
+        this.$emit('play2', {
+          choose: 'KERTAS'
+        })
         this.ilang2.batu2 = {
           display: 'none'
         }
@@ -70,6 +76,9 @@
       scissors2 () {
         console.log('GUNTING')
         this.playertwo.choose = 'GUNTING'
+        this.$emit('play2', {
+          choose: 'GUNTING'
+        })
         this.ilang2.kertas2 = {
           display: 'none'
         }
