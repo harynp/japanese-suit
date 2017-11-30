@@ -1,4 +1,5 @@
-import DashboardLayout from 'src/components/DashboardLayout.vue'
+import DashboardLayout from 'src/components/DashboardLayout'
+import Home from 'src/components/Home'
 // GeneralViews
 import NotFound from 'src/components/NotFoundPage.vue'
 
@@ -7,7 +8,11 @@ import Game from 'src/components/Game.vue'
 
 const routes = [
   {
-    path: '',
+    path: '/',
+    component: Home
+  },
+  {
+    path: '/room',
     component: DashboardLayout,
     children: [
       {
