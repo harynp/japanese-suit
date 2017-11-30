@@ -30,6 +30,19 @@
           this.$sidebar.displaySidebar(false)
         }
       }
+    },
+    created () {
+      if (!localStorage.getItem('fb_token') && !localStorage.getItem('dataUser')) {
+        console.log('--------------')
+        alert('Please Login')
+        this.$router.push('/')
+      } else {
+        let dataUser = JSON.parse(localStorage.getItem('dataUser'))
+        this.id = dataUser.id
+        this.name = dataUser.name
+        this.picture = dataUser.picture
+        this.cover = dataUser.cover
+      }
     }
   }
 
