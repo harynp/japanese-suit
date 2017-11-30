@@ -60,9 +60,9 @@ export default {
       this.playerone.choose = 'BATU'
       this.ilang.kertas = {display: 'none'}
       this.ilang.gunting = {display: 'none'}
-      listKey = listKeyDatabaseReference.getKey();
 
-      this.$db.ref(`/JAPAN`).set({
+
+      this.$db.ref(`/JAPAN/key`).set({
       choose: this.playerone.choose
       })
     },

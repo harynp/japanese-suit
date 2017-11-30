@@ -57,7 +57,9 @@ export default {
     },
     addRoom: function () {
       let name = JSON.parse(localStorage.getItem('dataUser')).name
-      this.$db.ref(`/JAPAN/`).push({
+      let id = JSON.parse(localStorage.getItem('dataUser')).id
+      this.$db.ref(`/JAPAN/id`).push({
+        id: id,
         name: name,
         score: this.score,
         status: this.status
